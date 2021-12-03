@@ -15,7 +15,8 @@ ___INFO___
   "securityGroups": [],
   "displayName": "FAST Script",
   "categories": [
-    "ANALYTICS", "CONVERSIONS"
+    "ANALYTICS",
+    "CONVERSIONS"
   ],
   "brand": {
     "id": "smarketer-de",
@@ -46,6 +47,14 @@ ___TEMPLATE_PARAMETERS___
     "checkboxText": "Server-IDᵇᵉᵗᵃ verwenden",
     "simpleValueType": true,
     "help": "Server-ID kann bei iOS Geräten für bessere Ergebnisse sorgen.\nDieses Feature ist jedoch noch in der Testphase."
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "ifl",
+    "checkboxText": "IFL-Modulᵇᵉᵗᵃ aktivieren",
+    "simpleValueType": true,
+    "help": "Das IFL-Modul sorgt für geringere Performance-Auswirkungen, indem das Skript über ein iFrame geladen wird.\nDieses Feature ist jedoch noch in der Testphase.",
+    "defaultValue": true
   },
   {
     "type": "SIMPLE_TABLE",
@@ -90,6 +99,9 @@ if (data.domainAlias !== '') {
 }
 if (data.serverId) {
   config.experiments = { serverSide: true };
+}
+if(data.ifl) {
+  config.loader = "iframe";
 }
 
 setInWindow("fast_config", config, true);
