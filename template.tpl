@@ -54,7 +54,7 @@ ___TEMPLATE_PARAMETERS___
     "checkboxText": "IFL-Modulᵇᵉᵗᵃ aktivieren",
     "simpleValueType": true,
     "help": "Das IFL-Modul sorgt für geringere Performance-Auswirkungen, indem das Skript über ein iFrame geladen wird.\nDieses Feature ist jedoch noch in der Testphase.",
-    "defaultValue": true
+    "defaultValue": false
   },
   {
     "type": "SIMPLE_TABLE",
@@ -106,7 +106,7 @@ if(data.ifl) {
 
 setInWindow("fast_config", config, true);
 
-inject('https://fast.smarketer.de/api/js/fast.js', () => {
+inject('https://fast-static.smarketer.de/fast.js', () => {
   data.gtmOnSuccess();
 });
 
