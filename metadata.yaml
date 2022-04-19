@@ -1,6 +1,8 @@
 homepage: "https://smarketer.de"
 documentation: "https://www.smarketer.de/cookie-less-tracking/"
 versions:
+  - sha: bab59f33ef9b0e6b7bdfedb3106a215a9da4941b
+    changeNotes: Use FAST CDN for loading scripts
   - sha: c0f4d86ca41a111eb9b273515cf646872e6ce8b7
     changeNotes: Adds Option for enabling IFL Module
   - sha: c5d79cfc76eacdaf37b13fa3e8c6a1f7dd7c10b8
